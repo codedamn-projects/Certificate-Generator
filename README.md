@@ -1,5 +1,5 @@
 # Codedamn Projects - Certificate Generator
-![main image](https://raw.githubusercontent.com/codedamn-projects/ticket-master-clone/master/designs/Display.png)
+![main image](https://raw.githubusercontent.com/codedamn-projects/Certificate-Generator/master/designs/Codedamn%20Certificate%20Generator%20Home%20Page%20%5BDesktop%5D.png)
 
 ## Hello developer!
 
@@ -13,61 +13,25 @@ Your challenge is to build out this project and get it looking as close to the d
 You can use **any tools or technologies** you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
 ### Landing Page 
-The landing page will be shown in the `/` route. 
 
-### Sign Up
+There is only one route in this project. On entering your name in the input box and clicking on `Generate Certificate`, the certificate with the name should be downloaded in the pdf format. 
 
-The following should be implement at the `/Sign Up` route.
-
-![register page](https://raw.githubusercontent.com/codedamn-projects/ticket-master-clone/master/designs/Sign%20Up.png)
-
-### Sign In
-
-The following should be implement in the `/sign-in` route.
-
-![sign in](https://raw.githubusercontent.com/codedamn-projects/ticket-master-clone/master/designs/Sign%20In.png)
+![certificate](https://raw.githubusercontent.com/codedamn-projects/Certificate-Generator/master/designs/Certificate%20Image.jpg)
 
 
-### Search Page
+Most of the work for this project will be done using the library `PDFlib`.
+The library has already been added as a script tab to the html document. 
 
-This page should be using the route `/search`.
+Steps: 
+1. Fetch the certificate from file system 
+2. load the document using the `PDFDocument` object
+3. load the font by fetching from file system
+4. Embed the font resource in the pdf object
+5. insert the test from the input box at the empty area where the name goes (with x,y and font-size)
+6. save the file 
+7. create a new file object in JavaSScript and download it using the `saveAs(fileName)` 
 
-On searching for anything on the `/` page on getting successful data from the API. The user should be redirect to `/search` and the results from the search should be shown. 
-
-![search image](https://raw.githubusercontent.com/codedamn-projects/ticket-master-clone/master/designs/Search.png)
-
-### Details
-
-All the details retrieved from the API can be shown in the drop down menu of the event. 
-
-![details](https://raw.githubusercontent.com/codedamn-projects/ticket-master-clone/master/designs/Details.png)
-## API Routes 
-
-You will be using [Ticket master API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/) 
-
-Please generate an API Key for using the API
-
-#### [Event Search ](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2)
-
-For finding the events based on the given parameters in the `/` page.
-
-#### [Event Details](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#event-details-v2)
-
-Showing the event details on selecting an event.
-
-### MongoDB user document
-```
-{
-    _id: ObjectId(),
-    name: <string>,
-    email: <string>,
-    password: <string>,
-    timestamp: <date>,
-    countryOfResidence: <string>,
-    zipCode: <number>
-}
-```
-
+You can refer to  [PDF-LIB documentation](https://pdf-lib.js.org/) to find out about the methods. 
 ### Ports 
 The Codedamn Playgrounds exposes only `1337` and `1338` ports on the internet. So you'll be using `localhost` for connecting to the mongodb instance as they are hosted on the same docker container. You can specify it as `localhost:27017` or simple write `localhost`. 
 
@@ -76,18 +40,11 @@ Want some support on the challenge? [Join our discord community](https://cdm.sh/
 
 There is no limit you can go beyond the mentioned criteria and create additional functionalities
 
-## Recommended Technologies 
-
-1. Mongoose for mongodb object modelling and effective type system 
-1. Tailwind CSS for User Interface
-
 ## Where to find everything
 
 Your task is to build out the project as per the provided screenshots. You will find both a mobile and a desktop version of the design.
 
 The designs are in image formats can be found in `/designs`.
-
-You will find all the required required images in the `/public` folder
 
 ## Send feedback!
 
